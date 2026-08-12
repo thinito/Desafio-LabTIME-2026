@@ -1,0 +1,90 @@
+# .gitignore para projetos .NET (Visual Studio / .NET 6/7/8/10)
+# Gerado para esconder arquivos gerados, bin/obj, configurações de IDE e pacotes
+
+# Build outputs
+[Bb]in/
+[Oo]bj/
+out/
+artifacts/
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Rider/JetBrains
+.idea/
+*.sln.iml
+
+# Visual Studio Code
+.vscode/
+
+# NuGet
+*.nupkg
+packages/
+.nuget/
+project.lock.json
+project.fragment.lock.json
+
+# ASP.NET Scaffolding
+ScaffoldedFiles/
+
+# Publish outputs
+publish/
+*.Publish.xml
+
+# IIS Express
+/.vs/Config/
+
+# SQL Server files
+*.mdf
+*.ldf
+
+# Logs
+*.log
+*.tlog
+
+# Web
+node_modules/
+wwwroot/lib/
+
+# User-specific files
+*.user
+*.userprefs
+*.sng
+*.sln.docstates
+
+# Symbol files
+*.pdb
+*.mdb
+
+# Dotnet temporary files
+*.dotCover
+*.dotTrace
+
+# Package directories
+bower_components/
+jspm_packages/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# JetBrains Rider caches
+.idea/
+*.sublime-workspace
+
+# Secrets
+secrets.json
+appsettings.Secret*.json
+
+# Optional: ignore test results and coverage
+TestResults/
+coverage/
+
+# Ignore generated files from Tools/Analyzers
+GeneratedFiles/
+
+# End of .gitignore
