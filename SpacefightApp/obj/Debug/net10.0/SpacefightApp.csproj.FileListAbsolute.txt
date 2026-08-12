@@ -1,0 +1,15 @@
+C:\Users\Thiago\source\repos\thinito\Desafio-LabTIME-2026\SpacefightApp\bin\Debug\net10.0\SpacefightApp.exe
+C:\Users\Thiago\source\repos\thinito\Desafio-LabTIME-2026\SpacefightApp\bin\Debug\net10.0\SpacefightApp.deps.json
+C:\Users\Thiago\source\repos\thinito\Desafio-LabTIME-2026\SpacefightApp\bin\Debug\net10.0\SpacefightApp.runtimeconfig.json
+C:\Users\Thiago\source\repos\thinito\Desafio-LabTIME-2026\SpacefightApp\bin\Debug\net10.0\SpacefightApp.dll
+C:\Users\Thiago\source\repos\thinito\Desafio-LabTIME-2026\SpacefightApp\bin\Debug\net10.0\SpacefightApp.pdb
+C:\Users\Thiago\source\repos\thinito\Desafio-LabTIME-2026\SpacefightApp\obj\Debug\net10.0\SpacefightApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Thiago\source\repos\thinito\Desafio-LabTIME-2026\SpacefightApp\obj\Debug\net10.0\SpacefightApp.AssemblyInfoInputs.cache
+C:\Users\Thiago\source\repos\thinito\Desafio-LabTIME-2026\SpacefightApp\obj\Debug\net10.0\SpacefightApp.AssemblyInfo.cs
+C:\Users\Thiago\source\repos\thinito\Desafio-LabTIME-2026\SpacefightApp\obj\Debug\net10.0\SpacefightApp.csproj.CoreCompileInputs.cache
+C:\Users\Thiago\source\repos\thinito\Desafio-LabTIME-2026\SpacefightApp\obj\Debug\net10.0\SpacefightApp.sourcelink.json
+C:\Users\Thiago\source\repos\thinito\Desafio-LabTIME-2026\SpacefightApp\obj\Debug\net10.0\SpacefightApp.dll
+C:\Users\Thiago\source\repos\thinito\Desafio-LabTIME-2026\SpacefightApp\obj\Debug\net10.0\refint\SpacefightApp.dll
+C:\Users\Thiago\source\repos\thinito\Desafio-LabTIME-2026\SpacefightApp\obj\Debug\net10.0\SpacefightApp.pdb
+C:\Users\Thiago\source\repos\thinito\Desafio-LabTIME-2026\SpacefightApp\obj\Debug\net10.0\SpacefightApp.genruntimeconfig.cache
+C:\Users\Thiago\source\repos\thinito\Desafio-LabTIME-2026\SpacefightApp\obj\Debug\net10.0\ref\SpacefightApp.dll
