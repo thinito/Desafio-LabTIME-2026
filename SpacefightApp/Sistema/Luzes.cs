@@ -9,10 +9,10 @@ public class Luzes : ISistema
 	{
 		if (nucleo.Energia <= 30)
 		{
-			Console.WriteLine("Luzes da sala foram apagadas.");
+			Console.WriteLine("- Luzes da sala foram apagadas.");
         } else if (evento == EventoNucleo.EnergiaRecuperada)
 		{ 
-			Console.WriteLine("Luzes da sala foram reestabellecidas.");
+			Console.WriteLine("- Luzes da sala foram reestabelecidas.");
         }
 	}
 }

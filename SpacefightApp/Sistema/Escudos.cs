@@ -9,10 +9,10 @@ public class Escudo : ISistema
     {
 		if (nucleo.Energia <= 30)
 		{
-			Console.WriteLine("Escudos em nivel critico! Escudos em modo de defesa.");
+			Console.WriteLine("- Escudos em modo de defesa.");
         } else if (evento == EventoNucleo.EnergiaRecuperada)
         {
-			Console.WriteLine("Escudos em nivel normal. Escudos em modo de ataque.");
+			Console.WriteLine("- Escudos em modo de ataque.");
         }
 	}
 }

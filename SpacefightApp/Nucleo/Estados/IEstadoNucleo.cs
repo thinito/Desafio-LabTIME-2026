@@ -3,7 +3,6 @@ using System;
 
 public interface IEstadoNucleo
 {
-    void Entrar(NucleoEnergia nucleo);
-    void Sair(NucleoEnergia nucleo);
+    void NovoEstado(NucleoEnergia nucleo);
     void RecebeDano(NucleoEnergia nucleo, int dano);
 }

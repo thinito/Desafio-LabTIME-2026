@@ -14,9 +14,9 @@ public class NucleoEnergia
 
     private List<ISistema> _observers = new List<ISistema>();
 
-    public NucleoEnergia(int energia)
+    public NucleoEnergia()
     {
-        Energia = energia;
+        Energia = 100;
         _estado = new EstadoNormal();
     }
 
@@ -61,9 +61,8 @@ public class NucleoEnergia
 
     public void MudarEstado(IEstadoNucleo novoEstado)
     {
-        _estado.Sair(this);
         _estado = novoEstado;
-        _estado.Entrar(this);
+        _estado.NovoEstado(this);
     }
 
     public void VerificaEstado()

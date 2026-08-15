@@ -12,7 +12,7 @@ public class PainelNavegacao : ISistema
             Console.WriteLine("[ALERTA] Energia em niveis criticos!");
         } else if (evento == EventoNucleo.EnergiaRecuperada)
         {
-            Console.WriteLine("Energia da nave reestabelicida.");
+            Console.WriteLine("- Energia da nave retornou a niveis seguros.");
         }
     }
 }
