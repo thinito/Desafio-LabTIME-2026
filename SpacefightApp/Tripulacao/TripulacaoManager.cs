@@ -1,5 +1,4 @@
 ﻿using Desafio_LabTIME_2026.Tripulacao.Cargos;
-using SpacefightApp.Tripulacao.Cargos;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -24,7 +23,7 @@ public class TripulacaoManager
 
     public static void ListarCargos() => CargoFactory.ListarCargos();
 
-    public static void ListarTripulantes(List<Tripulante> tripulantes)
+    public static void ListarTripulantes(IReadOnlyList<Tripulante> tripulantes)
     {
         int c = 0;
         Console.WriteLine("Tripulantes:");
@@ -36,7 +35,7 @@ public class TripulacaoManager
         Console.WriteLine("");
     }
 
-    public static Tripulante? ObterTripulante(List<Tripulante> tripulantes, int indice)
+    public static Tripulante? ObterTripulante(IReadOnlyList<Tripulante> tripulantes, int indice)
     {
         if (indice >= 0 && indice < tripulantes.Count)
             return tripulantes[indice];

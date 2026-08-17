@@ -22,6 +22,10 @@ public class MenuPrincipal
         {
             Console.Write("\n> ");
             var input = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                continue;
+            }
 
             var entradas = input.Trim().Split(' ', StringSplitOptions.RemoveEmptyEntries);
             var comando = entradas is not null && entradas.Length > 0 ? entradas[0].ToLower() : null;
@@ -32,9 +36,9 @@ public class MenuPrincipal
             switch (comando)
             {
                 case "tomar_dano":
-                    if (args.Length == 1 && int.TryParse(args[0], out int valor))
+                    if (args.Length == 1 && int.TryParse(args[0], out int valor) && valor >= 0)
                     {
-                        comando1 = new ComandoTomarDano(nave.nucleo, valor);
+                        comando1 = new ComandoTomarDano(nave.Nucleo, valor);
                     }
                     else
                     {
@@ -42,10 +46,10 @@ public class MenuPrincipal
                     }
                     break;
                 case "reduzir_energia":
-                    comando1 = new ComandoReduzirEnergia(nave.nucleo);
+                    comando1 = new ComandoReduzirEnergia(nave.Nucleo);
                     break;
                 case "recuperar_energia":
-                    comando1 = new ComandoRecuperarEnergia(nave.nucleo);
+                    comando1 = new ComandoRecuperarEnergia(nave.Nucleo);
                     break;
                 case "status":
                     ExibirStatus(nave);
@@ -72,7 +76,10 @@ public class MenuPrincipal
 
     public void ExibeMenu()
     {
-        Console.Clear();
+        if (!Console.IsOutputRedirected)
+        {
+            Console.Clear();
+        }
         Console.WriteLine("Bem Vindo ao Space Fight!\n");
         Console.WriteLine("=== SISTEMA DA NAVE ===\n");
         Console.WriteLine("Comandos: tomar_dano <valor> | reduzir_energia | recuperar_energia | tripulacao | armamento | status | sair\n");
@@ -81,7 +88,7 @@ public class MenuPrincipal
     public void ExibirStatus(Nave nave)
     {
         Console.WriteLine("==== Status da Nave ====");
-        Console.WriteLine($"| Energia da nave: {nave.nucleo.Energia} |\n| Estado da nave: {nave.nucleo.EstadoAtual} |");
+        Console.WriteLine($"| Energia da nave: {nave.Nucleo.Energia} |\n| Estado da nave: {nave.Nucleo.EstadoAtual} |");
         Console.WriteLine("========================\n");
     }
 }

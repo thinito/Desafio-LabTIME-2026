@@ -29,6 +29,10 @@ public class MenuArmamento
 
             Console.Write("\narmamento> ");
             var input = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                continue;
+            }
             var entradas = input.Trim().Split(' ', StringSplitOptions.RemoveEmptyEntries);
             var comando = entradas is not null && entradas.Length > 0 ? entradas[0].ToLower() : null;
             var args = entradas.Length > 1 ? entradas[1..] : Array.Empty<string>();
@@ -59,6 +63,11 @@ public class MenuArmamento
                         _mensagemBuffer.Add("- O argumento deve ser um número inteiro.");
                         break;
                     }
+                    if(nave.Arma == null)
+                    {
+                        _mensagemBuffer.Add("- Nenhuma arma equipada. Equipe uma arma antes de adicionar modificadores.");
+                        break;
+                    }
                     _mensagemBuffer.AddRange(ArmamentoManager.AdicionarModificador(numMod, nave));
                     break;
                 case "atirar":
@@ -78,7 +87,10 @@ public class MenuArmamento
 
     public void ExibeMenuArmamento(Nave nave)
     {
-        Console.Clear();
+        if (!Console.IsOutputRedirected)
+        {
+            Console.Clear();
+        }
         Console.WriteLine("=== SISTEMA DE ARMAMENTO ===\n");
         Console.WriteLine("Comandos: equipar_arma <num.Arma> | Atirar | adicionar_modificador <num.Modificador> | status | voltar");
         ArmamentoManager.ListarArmas();

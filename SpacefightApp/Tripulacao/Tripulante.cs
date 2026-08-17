@@ -17,11 +17,6 @@ public class Tripulante
         CargoAtual = cargoAtual;
     }
 
-    public void Trabalhar()
-    {
-        CargoAtual.Trabalhar(Nome);
-    }
-
     public void MudarCargo(ICargo novoCargo)
     {
         CargoAtual = novoCargo;

@@ -11,11 +11,12 @@ namespace Desafio_LabTIME_2026.NaveEspacial;
 
 public class Nave
 {
-    public NucleoEnergia nucleo;
+    public NucleoEnergia Nucleo { get; }
+    private readonly List<Tripulante> _tripulantes = new();
+    public IReadOnlyList<Tripulante> Tripulantes => _tripulantes;
 
-    public List<Tripulante> tripulantes = new List<Tripulante>();
-
-    public IArma Arma { get; set; }
+    public IArma? Arma { get; private set; }
+    public void EquiparArma(IArma arma) => Arma = arma ?? throw new ArgumentNullException(nameof(arma));
 
     public List<string> Atirar()
     {
@@ -24,11 +25,11 @@ public class Nave
 
     public Nave()
     {
-        nucleo = new NucleoEnergia();
-        nucleo.AdicionarSistema(new Escudo());
-        nucleo.AdicionarSistema(new PainelNavegacao());
-        nucleo.AdicionarSistema(new Luzes());
-        tripulantes = MockData.GerarTripulantes();
+        Nucleo = new NucleoEnergia();
+        Nucleo.AdicionarSistema(new Escudo());
+        Nucleo.AdicionarSistema(new PainelNavegacao());
+        Nucleo.AdicionarSistema(new Luzes());
+        _tripulantes.AddRange(MockData.GerarTripulantes());
     }
 
 }

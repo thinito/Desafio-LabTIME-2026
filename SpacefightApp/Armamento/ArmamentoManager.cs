@@ -17,10 +17,10 @@ public class ArmamentoManager
         try
         {
             var arma = ArmaFactory.CriarArma(numArma);
-            nave.Arma = arma;
+            nave.EquiparArma(arma);
             return $"- Arma '{arma.Nome}' equipada com sucesso!";
         }
-        catch (Exception ex)
+        catch (ArgumentException ex)
         {
             return ex.Message;
         }
@@ -32,10 +32,10 @@ public class ArmamentoManager
         try
         {
             var modificador = ArmaFactory.AplicarModificador(nave.Arma, numModificador);
-            nave.Arma = modificador;
+            nave.EquiparArma(modificador);
             return $"- Modificador '{modificador.Nome}' adicionado com sucesso!";
         }
-        catch (Exception ex)
+        catch (ArgumentException ex)
         {
             return ex.Message;
         }

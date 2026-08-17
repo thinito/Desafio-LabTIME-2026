@@ -1,9 +1,8 @@
-﻿using Desafio_LabTIME_2026.Tripulacao.Cargos;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SpacefightApp.Tripulacao.Cargos;
+namespace Desafio_LabTIME_2026.Tripulacao.Cargos;
 public static class CargoFactory
 {
     public static ICargo Criar(int numeroCargo)

@@ -33,7 +33,9 @@ public class NucleoEnergia
 
     public void TomarDano(int valor)
     {
-        Energia -= valor;
+        if (valor < 0)
+            throw new ArgumentException("O valor do dano não pode ser negativo.", nameof(valor));
+        Energia = Math.Max(0, Energia - valor);
         _estado.RecebeDano(this, valor);
         VerificaEstado();
         NotificarObservers(EventoNucleo.DanoRecebido);
@@ -41,7 +43,7 @@ public class NucleoEnergia
 
     public void ReduzirEnergia()
     {
-        Energia -= 20;
+        Energia = Math.Max(0, Energia - 20);
         _estado.RecebeDano(this, 20);
         VerificaEstado();
         NotificarObservers(EventoNucleo.EnergiaAlterada);

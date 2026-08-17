@@ -1,90 +1,68 @@
-# .gitignore para projetos .NET (Visual Studio / .NET 6/7/8/10)
-# Gerado para esconder arquivos gerados, bin/obj, configurações de IDE e pacotes
+# .gitignore para projeto .NET / Visual Studio
 
-# Build outputs
+# Build e artefatos locais
 [Bb]in/
 [Oo]bj/
 out/
 artifacts/
+publish/
+TestResults/
+coverage/
+GeneratedFiles/
 
-# Visual Studio
+# Configuração do Visual Studio / IDE
 .vs/
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
+*.rsuser
+*.pidb
+*.dbmdl
+*.opendb
+*.VC.db
 
-# Rider/JetBrains
+# JetBrains / VS Code
 .idea/
-*.sln.iml
-
-# Visual Studio Code
 .vscode/
+*.code-workspace
+*.sln.iml
+*.swp
+*.tmp
 
 # NuGet
-*.nupkg
 packages/
 .nuget/
+*.nupkg
+*.snupkg
 project.lock.json
 project.fragment.lock.json
 
-# ASP.NET Scaffolding
-ScaffoldedFiles/
-
-# Publish outputs
-publish/
-*.Publish.xml
-
-# IIS Express
-/.vs/Config/
-
-# SQL Server files
-*.mdf
-*.ldf
-
-# Logs
-*.log
-*.tlog
-
-# Web
+# ASP.NET / Web
 node_modules/
 wwwroot/lib/
+ScaffoldedFiles/
 
-# User-specific files
-*.user
-*.userprefs
-*.sng
-*.sln.docstates
+# Logs e temporários
+*.log
+*.tlog
+*.tmp
+*.bak
 
-# Symbol files
-*.pdb
-*.mdb
-
-# Dotnet temporary files
-*.dotCover
-*.dotTrace
-
-# Package directories
-bower_components/
-jspm_packages/
-
-# OS files
+# Arquivos de sistema
 Thumbs.db
 .DS_Store
+Desktop.ini
 
-# JetBrains Rider caches
-.idea/
-*.sublime-workspace
-
-# Secrets
+# Secrets e configs locais
 secrets.json
 appsettings.Secret*.json
 
-# Optional: ignore test results and coverage
-TestResults/
-coverage/
+# Simbols e arquivos de depuração
+*.pdb
+*.mdb
+*.dll
+*.exe
 
-# Ignore generated files from Tools/Analyzers
-GeneratedFiles/
-
-# End of .gitignore
+# Exceção: mantenha o código-fonte e a documentação do projeto no controle do Git
+# (não ignorar arquivos manualmente aqui, apenas artefatos gerados e locais da máquina)

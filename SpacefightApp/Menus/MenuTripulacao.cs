@@ -27,6 +27,10 @@ public class MenuTripulacao
 
             Console.Write("\ntripulacao> ");
             var input = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                continue;
+            }
             var entradas = input.Trim().Split(' ', StringSplitOptions.RemoveEmptyEntries);
             var comando = entradas is not null && entradas.Length > 0 ? entradas[0].ToLower() : null;
             var args = entradas.Length > 1 ? entradas[1..] : Array.Empty<string>();
@@ -44,7 +48,7 @@ public class MenuTripulacao
                         _mensagemBuffer.Add("- Os argumentos devem ser números inteiros.");
                         break;
                     }
-                    var t1 = TripulacaoManager.ObterTripulante(nave.tripulantes, numTripulante);
+                    var t1 = TripulacaoManager.ObterTripulante(nave.Tripulantes, numTripulante);
                     if (t1 == null)
                     {
                         _mensagemBuffer.Add("- Tripulante não encontrado.");
@@ -63,7 +67,7 @@ public class MenuTripulacao
                         _mensagemBuffer.Add("- O argumento deve ser um número inteiro.");
                         break;
                     }
-                    var t2 = TripulacaoManager.ObterTripulante(nave.tripulantes, numTripulanteTrabalho);
+                    var t2 = TripulacaoManager.ObterTripulante(nave.Tripulantes, numTripulanteTrabalho);
                     if (t2 == null)
                     {
                         _mensagemBuffer.Add("- Tripulante não encontrado.");
@@ -84,10 +88,13 @@ public class MenuTripulacao
 
     public void ExibeMenuTripulacao(Nave nave)
     {
-        Console.Clear();
+        if (!Console.IsOutputRedirected)
+        {
+            Console.Clear();
+        }
         Console.WriteLine("=== SISTEMA DE TRIPULACAO ===\n");
         Console.WriteLine("Comandos: mudar_cargo <num.Tripulante> <num.Cargo> | trabalhar <num.Tripulante> | voltar\n");
-        TripulacaoManager.ListarTripulantes(nave.tripulantes);
+        TripulacaoManager.ListarTripulantes(nave.Tripulantes);
         TripulacaoManager.ListarCargos();
     }
 }
