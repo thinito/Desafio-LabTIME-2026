@@ -9,10 +9,13 @@ using System.Text;
 
 namespace Desafio_LabTIME_2026.Menus;
 
-public static class MenuPrincipal
+public class MenuPrincipal
 {
-    private static List<string> _mensagemBuffer = new();
-    public static void Exibir(Nave nave)
+    private static MenuPrincipal? _instance;
+    public static MenuPrincipal Instance => _instance ??= new MenuPrincipal();
+    private MenuPrincipal() { }
+
+    public void Exibir(Nave nave)
     {
         ExibeMenu();
         while (true)
@@ -48,11 +51,11 @@ public static class MenuPrincipal
                     ExibirStatus(nave);
                     break;
                 case "tripulacao":
-                    MenuTripulacao.Exibir(nave);
+                    MenuTripulacao.Instance.Exibir(nave);
                     ExibeMenu();
                     break;
                 case "armamento":
-                    MenuArmamento.Exibir(nave);
+                    MenuArmamento.Instance.Exibir(nave);
                     ExibeMenu();
                     break;
                 case "sair":
@@ -64,10 +67,10 @@ public static class MenuPrincipal
             }
 
             comando1?.Executar();
-
         }
     }
-    public static void ExibeMenu()
+
+    public void ExibeMenu()
     {
         Console.Clear();
         Console.WriteLine("Bem Vindo ao Space Fight!\n");
@@ -75,11 +78,10 @@ public static class MenuPrincipal
         Console.WriteLine("Comandos: tomar_dano <valor> | reduzir_energia | recuperar_energia | tripulacao | armamento | status | sair\n");
     }
 
-    public static void ExibirStatus(Nave nave)
+    public void ExibirStatus(Nave nave)
     {
         Console.WriteLine("==== Status da Nave ====");
         Console.WriteLine($"| Energia da nave: {nave.nucleo.Energia} |\n| Estado da nave: {nave.nucleo.EstadoAtual} |");
         Console.WriteLine("========================\n");
     }
-
 }

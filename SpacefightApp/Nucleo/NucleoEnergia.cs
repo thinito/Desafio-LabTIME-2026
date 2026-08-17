@@ -25,11 +25,6 @@ public class NucleoEnergia
         if (!_observers.Contains(sistema)) _observers.Add(sistema);
     }
 
-    public void RemoverSistema(ISistema sistema)
-    {
-        if (_observers.Contains(sistema)) _observers.Remove(sistema);
-    }
-
     private void NotificarObservers(EventoNucleo evento)
     {
         foreach (var obs in _observers)

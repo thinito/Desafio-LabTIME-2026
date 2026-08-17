@@ -9,6 +9,6 @@ class Program
     static void Main()
     {
         var nave = new Nave();
-        MenuPrincipal.Exibir(nave);
+        MenuPrincipal.Instance.Exibir(nave);
     }
 }

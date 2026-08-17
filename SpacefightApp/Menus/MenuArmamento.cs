@@ -8,14 +8,19 @@ using Desafio_LabTIME_2026.Armamento.Armas;
 
 namespace Desafio_LabTIME_2026.Menus;
 
-public static class MenuArmamento
+public class MenuArmamento
 {
-    private static List<string> _mensagemBuffer = new ();
-    public static void Exibir(Nave nave)
+    private static MenuArmamento? _instance;
+    public static MenuArmamento Instance => _instance ??= new MenuArmamento();
+    private MenuArmamento() { }
+
+    private List<string> _mensagemBuffer = new();
+
+    public void Exibir(Nave nave)
     {
         while (true)
         {
-            ExibeMenuArmamento(nave); 
+            ExibeMenuArmamento(nave);
             foreach (var msg in _mensagemBuffer)
             {
                 Console.WriteLine(msg);
@@ -28,7 +33,6 @@ public static class MenuArmamento
             var comando = entradas is not null && entradas.Length > 0 ? entradas[0].ToLower() : null;
             var args = entradas.Length > 1 ? entradas[1..] : Array.Empty<string>();
 
-            //ExibeMenuTripulacao(nave);
             switch (comando)
             {
                 case "equipar_arma":
@@ -37,8 +41,7 @@ public static class MenuArmamento
                         _mensagemBuffer.Add("- Uso correto> equipar_arma <num.Arma>");
                         break;
                     }
-                    
-                    if (!int.TryParse(args[0], out int numArma) )
+                    if (!int.TryParse(args[0], out int numArma))
                     {
                         _mensagemBuffer.Add("- O argumento deve ser número inteiro.");
                         break;
@@ -56,27 +59,24 @@ public static class MenuArmamento
                         _mensagemBuffer.Add("- O argumento deve ser um número inteiro.");
                         break;
                     }
-                    _mensagemBuffer.AddRange(ArmamentoManager.AdicionarModificador(numMod,nave));
+                    _mensagemBuffer.AddRange(ArmamentoManager.AdicionarModificador(numMod, nave));
                     break;
-
                 case "atirar":
                     _mensagemBuffer.AddRange(nave.Atirar());
                     break;
-
                 case "status":
                     ExibeStatusArma(nave);
                     break;
                 case "voltar":
                     return;
-
                 default:
                     _mensagemBuffer.Add("- Comando inválido");
                     break;
             }
         }
     }
- 
-    public static void ExibeMenuArmamento( Nave nave )
+
+    public void ExibeMenuArmamento(Nave nave)
     {
         Console.Clear();
         Console.WriteLine("=== SISTEMA DE ARMAMENTO ===\n");
@@ -86,7 +86,7 @@ public static class MenuArmamento
         Console.WriteLine("");
     }
 
-    public static void ExibeStatusArma(Nave nave)
+    public void ExibeStatusArma(Nave nave)
     {
         _mensagemBuffer.Add("- Arma Equipada: " + (nave.Arma?.Nome ?? "Nenhuma arma equipada."));
         if (nave.Arma != null) _mensagemBuffer.Add($"- Descricao: {nave.Arma.Descricao()}");

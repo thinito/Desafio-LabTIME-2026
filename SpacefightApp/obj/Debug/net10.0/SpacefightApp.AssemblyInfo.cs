@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SpacefightApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+797db67f780301310ed7b5d125a591ecdda1b78a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+73dc1df67fc592183345ea34c5afb20673a09bfb")]
 [assembly: System.Reflection.AssemblyProductAttribute("SpacefightApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SpacefightApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

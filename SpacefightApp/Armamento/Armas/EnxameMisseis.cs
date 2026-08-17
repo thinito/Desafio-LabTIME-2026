@@ -13,13 +13,9 @@ public class EnxameMisseis : IArma
         return $"Um enxame de mísseis que pode causar grande dano ao inimigo.";
     }
 
-    public EnxameMisseis()
-    {
-        // Construtor da classe EnxameMisseis
-    }
+    public EnxameMisseis(){}
     public List<string> Atirar()
     {
-        //Conle.WriteLine("Enxame de mísseis lançado!");
         return new List<string> { "Uma saraivada de mísseis foi lançada!" };
     }
 }

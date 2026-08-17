@@ -6,14 +6,19 @@ using Desafio_LabTIME_2026.Tripulacao;
 
 namespace Desafio_LabTIME_2026.Menus;
 
-public static class MenuTripulacao
+public class MenuTripulacao
 {
-    private static List<string> _mensagemBuffer = new ();
-    public static void Exibir(Nave nave)
+    private static MenuTripulacao? _instance;
+    public static MenuTripulacao Instance => _instance ??= new MenuTripulacao();
+    private MenuTripulacao() { }
+
+    private List<string> _mensagemBuffer = new();
+
+    public void Exibir(Nave nave)
     {
         while (true)
         {
-            ExibeMenuTripulacao(nave); 
+            ExibeMenuTripulacao(nave);
             foreach (var msg in _mensagemBuffer)
             {
                 Console.WriteLine(msg);
@@ -26,7 +31,6 @@ public static class MenuTripulacao
             var comando = entradas is not null && entradas.Length > 0 ? entradas[0].ToLower() : null;
             var args = entradas.Length > 1 ? entradas[1..] : Array.Empty<string>();
 
-            //ExibeMenuTripulacao(nave);
             switch (comando)
             {
                 case "mudar_cargo":
@@ -41,7 +45,7 @@ public static class MenuTripulacao
                         break;
                     }
                     var t1 = TripulacaoManager.ObterTripulante(nave.tripulantes, numTripulante);
-                    if(t1 == null)
+                    if (t1 == null)
                     {
                         _mensagemBuffer.Add("- Tripulante não encontrado.");
                         break;
@@ -77,8 +81,8 @@ public static class MenuTripulacao
             }
         }
     }
- 
-    public static void ExibeMenuTripulacao( Nave nave )
+
+    public void ExibeMenuTripulacao(Nave nave)
     {
         Console.Clear();
         Console.WriteLine("=== SISTEMA DE TRIPULACAO ===\n");
