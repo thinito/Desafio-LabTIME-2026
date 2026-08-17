@@ -5,6 +5,7 @@ using Desafio_LabTIME_2026.Tripulacao;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Desafio_LabTIME_2026.Armamento.Armas;
 
 namespace Desafio_LabTIME_2026.NaveEspacial;
 
@@ -14,6 +15,12 @@ public class Nave
 
     public List<Tripulante> tripulantes = new List<Tripulante>();
 
+    public IArma Arma { get; set; }
+
+    public List<string> Atirar()
+    {
+        return Arma?.Atirar() ?? new List<string> { "Nenhuma arma equipada." };
+    }
 
     public Nave()
     {
@@ -23,4 +30,5 @@ public class Nave
         nucleo.AdicionarSistema(new Luzes());
         tripulantes = MockData.GerarTripulantes();
     }
+
 }

@@ -16,7 +16,7 @@ public static class CargoFactory
             4 => new EngenheiroEscudos(),
             5 => new MecanicoMotor(),
             6 => new Cozinheiro(),
-            _ => throw new ArgumentException("- Cargo inválido")
+            _ => throw new ArgumentException("\n- Cargo inválido")
         };
     }
 

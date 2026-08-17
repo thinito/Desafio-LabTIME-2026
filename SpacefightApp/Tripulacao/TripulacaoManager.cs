@@ -16,9 +16,9 @@ public class TripulacaoManager
             tripulante.CargoAtual = cargoNovo;
             return $"- {tripulante.Nome} agora é {cargoNovo.Nome}.";
         }
-        catch
+        catch(Exception ex)
         {
-            return "- Cargo inválido.";
+            return ex.Message;
         }
     }
 
