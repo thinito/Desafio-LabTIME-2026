@@ -16,11 +16,4 @@ public class Tripulante
         Nome = nome;
         CargoAtual = cargoAtual;
     }
-
-    public void MudarCargo(ICargo novoCargo)
-    {
-        CargoAtual = novoCargo;
-        Console.WriteLine($"{Nome} mudou para o cargo de {CargoAtual.Nome}.");
-    }
-
 }
